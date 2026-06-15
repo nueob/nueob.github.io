@@ -60,6 +60,10 @@ h3{font-size:17px;font-weight:700;letter-spacing:-.01em}
 .job ul{margin:12px 0 0;padding-left:18px}
 .job li{margin:7px 0;font-size:15px}
 .job li b{font-weight:700}
+.job .co a.colink{color:inherit}
+.job .co a.colink:hover{color:var(--accent);text-decoration:underline}
+.job .co .ext{font-size:.72em;color:var(--muted);margin-left:2px;vertical-align:1px}
+.job .co a.colink:hover .ext{color:var(--accent)}
 
 /* project cards (index teaser) */
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
