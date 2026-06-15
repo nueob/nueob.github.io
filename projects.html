@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>대표 프로젝트 · 이보은</title>
-<meta name="description" content="이보은의 대표 프로젝트 상세 — 갓생피드 SNS, 파트너 정산 자동화, SSO·결제·외부 연동, 고가용성 서버리스 API, AI 해커톤 단상." />
+<meta name="description" content="이보은의 대표 프로젝트 상세 — 갓생피드 SNS, 운영 정책 위반 자동 탐지(AI), 파트너 정산 자동화, SSO·외부 연동, 고가용성 서버리스 API, 사내 AI 해커톤 단상." />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="대표 프로젝트 · 이보은" />
 <meta property="og:description" content="백엔드 엔지니어 이보은의 대표 프로젝트 상세 기록" />
@@ -57,6 +57,7 @@
       <li>게시/댓글/대댓글·좋아요·신고 등 피드 도메인 백엔드를 신규 설계·구현 (단일 API 모듈 약 1,770줄).</li>
       <li>스트릭(연속 인증), 좋아요·댓글 마일스톤 FCM 푸시 등 참여 유도 기능 구현.</li>
       <li>작성자와의 1:1 채팅(Socket.IO) 연동, 웹(Vue 2.7 SSR) 풀스택 구현 후 배포.</li>
+      <li><b>AI(Claude Code)를 활용해 iOS·Android 네이티브 앱을 개발</b>하고 안정적으로 배포 (직접 네이티브 코딩이 아닌 AI 활용 개발 방식).</li>
       <li><b>Claude Code(AI)를 적극 활용</b>해 반복 작업을 자동화하고 개발 시간을 약 <b>1/4로 단축</b>.</li>
       <li>기획자가 간단한 퍼블리싱(마크업·문구 수정 등)을 직접 처리할 수 있도록 <b>개발 환경 세팅을 지원</b>해 협업 효율을 높임.</li>
     </ul>
@@ -65,7 +66,29 @@
     <ul>
       <li>신규 커뮤니티 도메인을 백엔드 설계·구현부터 웹 배포까지 단독에 가깝게 책임지고 출시.</li>
     </ul>
-    <p class="note">* iOS·Android 앱은 일부 기능 구현을 직접 경험했습니다.</p>
+  </article>
+
+  <!-- 운영 정책 위반 자동 탐지 (Bedrock) -->
+  <article class="proj" id="abuse">
+    <h2>운영 정책 위반 자동 탐지 (AI 파이프라인)</h2>
+    <p class="summary">Amazon Bedrock LLM 기반으로 사용자 게시글의 운영 정책 위반을 자동 판별·점수화하는 파이프라인. (비누커리어 · 캠퍼스픽)</p>
+    <div class="tags"><span class="tag">AWS Bedrock (Claude)</span><span class="tag">AWS Lambda</span><span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">Prompt Engineering</span></div>
+
+    <h4>배경 · 문제</h4>
+    <ul>
+      <li>커뮤니티에 게시되는 글의 운영 정책 위반 여부를 운영팀이 <b>수동으로 검수</b>하고 있어, 자동화로 운영 부담을 줄일 필요가 있었습니다.</li>
+    </ul>
+
+    <h4>주요 역할 · 구현</h4>
+    <ul>
+      <li>Amazon <b>Bedrock LLM(Claude)</b> 기반으로 게시글의 정책 위반 여부를 판별하고 점수화하는 파이프라인을 설계·구현.</li>
+      <li>Prompt Engineering과 텍스트 전처리 로직을 설계하고 AWS Lambda 기반으로 운영.</li>
+    </ul>
+
+    <h4>성과</h4>
+    <ul>
+      <li>위반 탐지 정확도 90%+ 달성, 운영팀의 수동 검수 업무를 자동화하여 운영 공수 절감.</li>
+    </ul>
   </article>
 
   <!-- 정산 -->
@@ -96,28 +119,27 @@
 
   <!-- SSO/결제/연동 -->
   <article class="proj" id="auth-pay">
-    <h2>SSO · 결제 · 외부 API 연동</h2>
-    <p class="summary">인증 · 결제 · 외부 연동 전 과정을 풀스택으로 구현. (유니브스토어 · 비누커머스)</p>
-    <div class="tags"><span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">OAuth</span><span class="tag">이니시스 / 카카오페이</span><span class="tag">삼성 SDS API</span><span class="tag">Jest / MSW</span></div>
+    <h2>SSO · 외부 API 연동</h2>
+    <p class="summary">인증(SSO)과 외부 파트너 API 연동을 풀스택으로 구현. (유니브스토어 · 비누커머스)</p>
+    <div class="tags"><span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">OAuth</span><span class="tag">삼성 SDS API</span><span class="tag">Jest / MSW</span></div>
 
     <h4>주요 역할 · 구현</h4>
     <ul>
       <li><b>에브리타임 OAuth/SSO 로그인·자동가입 통합 구축</b> — 외부 플랫폼 OAuth, 웹뷰 자동로그인, 본인인증(CI) 중복체크, 약관·탈퇴 연동까지 인증 전 과정 신규 설계.</li>
-      <li><b>PG 결제 모듈 추상화</b> — 이니시스·카카오페이를 <code>PaymentService</code> 추상화로 분리하고 단위·통합 테스트(Jest/MSW) 동반. 망취소·tid 누락 등 결제 엣지케이스 대응.</li>
-      <li><b>삼성 SDS 트레이드인(중고폰 보상) 외부 API 연동</b> — 모델/단가 조회·신청·상태조회 API 설계, 외부 응답 매핑, 장바구니·결제 플로우 분기 (TLS 호환 이슈 직접 해결).</li>
+      <li><b>삼성 SDS 트레이드인(중고폰 보상) 외부 API 연동</b> — 모델/단가 조회·신청·상태조회 API 설계, 외부 응답 매핑, 장바구니·결제 플로우 분기, 단위·통합 테스트(Jest/MSW) (TLS 호환 이슈 직접 해결).</li>
     </ul>
 
     <h4>성과</h4>
     <ul>
-      <li>인증·결제·외부 연동의 신뢰도와 테스트 가능성을 확보하고, 결제 장애 대응력을 강화.</li>
+      <li>인증·외부 연동의 신뢰도와 테스트 가능성을 확보하고, 연동 장애 대응력을 강화.</li>
     </ul>
   </article>
 
   <!-- 서버리스 API -->
   <article class="proj" id="serverless">
     <h2>고가용성 서버리스 API</h2>
-    <p class="summary">메인 서버와 트래픽·장애를 격리한 독립 서버리스 API와 비동기 워커 시스템. (비누커머스 · 비누커리어)</p>
-    <div class="tags"><span class="tag">AWS Lambda</span><span class="tag">API Gateway</span><span class="tag">SQS</span><span class="tag">CloudWatch</span><span class="tag">Node.js</span><span class="tag">TypeScript</span></div>
+    <p class="summary">에브리타임 앱 연동을 위해 메인 서버와 트래픽·장애를 격리한 독립 서버리스 API. (비누커머스 · 비누커리어)</p>
+    <div class="tags"><span class="tag">AWS Lambda</span><span class="tag">API Gateway</span><span class="tag">CloudWatch</span><span class="tag">Node.js</span><span class="tag">TypeScript</span></div>
 
     <h4>배경 · 문제</h4>
     <ul>
@@ -128,7 +150,6 @@
     <ul>
       <li>API Gateway + Lambda 기반 서버리스 아키텍처를 신규 설계·구현 (메인 서버 의존 없는 고가용성).</li>
       <li>모든 요청을 CloudWatch로 100% 로깅·모니터링하고 Alarm으로 오류 알림 체계 구축.</li>
-      <li><b>SQS 비동기 워커 시스템</b> 설계 — 40+ 액션 핸들러(삭제 cascade·푸시·메일·배치)와 공통 모듈로 타입·메시지 계약을 표준화.</li>
     </ul>
 
     <h4>성과</h4>
