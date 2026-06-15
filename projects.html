@@ -43,7 +43,7 @@
     <div class="star">★ 대표 프로젝트</div>
     <h2>갓생피드 — 인증형 SNS</h2>
     <p class="summary">백엔드 설계·구현부터 웹 배포까지 담당한 신규 커뮤니티 서비스. (비누커리어 · 캠퍼스픽)</p>
-    <div class="tags"><span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">Express</span><span class="tag">MySQL</span><span class="tag">Redis</span><span class="tag">Socket.IO</span><span class="tag">FCM</span><span class="tag">Vue 2.7</span></div>
+    <div class="tags"><span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">Express</span><span class="tag">MySQL</span><span class="tag">Redis</span><span class="tag">Socket.IO</span><span class="tag">FCM</span><span class="tag">Vue 2.7</span><span class="tag">Claude Code</span></div>
 
     <h4>배경 · 문제</h4>
     <ul>
@@ -57,6 +57,8 @@
       <li>게시/댓글/대댓글·좋아요·신고 등 피드 도메인 백엔드를 신규 설계·구현 (단일 API 모듈 약 1,770줄).</li>
       <li>스트릭(연속 인증), 좋아요·댓글 마일스톤 FCM 푸시 등 참여 유도 기능 구현.</li>
       <li>작성자와의 1:1 채팅(Socket.IO) 연동, 웹(Vue 2.7 SSR) 풀스택 구현 후 배포.</li>
+      <li><b>Claude Code(AI)를 적극 활용</b>해 반복 작업을 자동화하고 개발 시간을 약 <b>1/4로 단축</b>.</li>
+      <li>기획자가 간단한 퍼블리싱(마크업·문구 수정 등)을 직접 처리할 수 있도록 <b>개발 환경 세팅을 지원</b>해 협업 효율을 높임.</li>
     </ul>
 
     <h4>성과</h4>
@@ -137,20 +139,27 @@
 
   <!-- 단상 -->
   <article class="proj" id="dansang">
-    <div class="star">★ VINU AI 해커톤 우수상(2등)</div>
+    <div class="star">★ VINU 사내 AI 해커톤 우수상(2등)</div>
     <h2>단상(Dansang) — AI 커뮤니케이션 코치</h2>
-    <p class="summary">발표·면접 불안을 겪는 학생을 위한 AI 훈련 서비스 (발표·토론·질문 3개 모드). 백엔드 담당.</p>
-    <div class="tags"><span class="tag">Express</span><span class="tag">AWS Bedrock (Claude 3.5)</span><span class="tag">Transcribe</span><span class="tag">Polly</span><span class="tag">S3</span></div>
+    <p class="summary">발표·면접 불안을 겪는 학생을 위한 AI 훈련 서비스 (발표·토론·질문 3개 모드). 전사 개발자·기획자가 참여한 사내 AI 해커톤 출품작 — 개발자 3인 팀의 백엔드 담당.</p>
+    <div class="tags"><span class="tag">Express</span><span class="tag">AWS Bedrock (Claude 3.5)</span><span class="tag">Transcribe</span><span class="tag">Polly</span><span class="tag">S3</span><span class="tag">Claude Code</span></div>
+
+    <h4>배경</h4>
+    <ul>
+      <li>회사의 전 개발자·기획자가 참여한 사내 AI 해커톤으로, 모든 팀이 <b>Claude Code(AI)를 활용해 개발</b>하는 방식으로 진행되었습니다.</li>
+    </ul>
 
     <h4>주요 역할 · 구현</h4>
     <ul>
       <li>Express API + AWS <b>Bedrock(Claude 3.5)·Transcribe(STT)·Polly(TTS)·S3</b> 연동으로 음성 분석·피드백·AI 페르소나 대화 엔진을 구현.</li>
-      <li>개발 전 과정에 <b>AI를 '팀원'으로 활용</b>, 아키텍처 문서 선(先)정의로 협업 토큰 70% 절감.</li>
+      <li>개발자 3인이 일관되고 효율적으로 AI 협업을 하도록 <b>팀 공용 CLAUDE.md(프로젝트 규칙·컨벤션 가이드)를 직접 작성·공유</b> — 팀 전체의 AI 개발 생산성을 끌어올렸습니다.</li>
+      <li>아키텍처 문서를 선(先)정의해 협업 토큰 사용량 70% 절감.</li>
     </ul>
 
     <h4>성과</h4>
     <ul>
-      <li>3일 만에 MVP 완성, 베타 테스터 50명 평균 발표 점수 35% 향상, <b>해커톤 우수상(2등)</b> 수상.</li>
+      <li>3일 만에 MVP 완성, 베타 테스터 50명 평균 발표 점수 35% 향상.</li>
+      <li>전사 개발자·기획자가 참여한 사내 AI 해커톤에서 <b>우수상(2등)</b> 수상.</li>
     </ul>
   </article>
 
