@@ -57,6 +57,7 @@ h3{font-size:17px;font-weight:700;letter-spacing:-.01em}
 .job .co{font-weight:800;font-size:17px}
 .job .date{color:var(--muted);font-size:14px;font-weight:500}
 .job .pos{color:var(--accent);font-size:14px;font-weight:600;margin-top:2px}
+.job .summary{color:var(--muted);font-size:14px;margin-top:8px}
 .job ul{margin:12px 0 0;padding-left:18px}
 .job li{margin:7px 0;font-size:15px}
 .job li b{font-weight:700}
