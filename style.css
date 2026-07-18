@@ -23,16 +23,38 @@ nav .links a:hover{color:var(--accent)}
 @media(max-width:600px){nav .links{display:none}}
 
 /* hero */
-header.hero{background:linear-gradient(160deg,#0f1b32 0%,#1c2c4d 60%,#21385f 100%);color:#fff;padding:72px 0 64px}
-.hero h1{font-size:clamp(30px,6vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.15}
-.hero .role{margin-top:10px;font-size:clamp(16px,3.4vw,20px);color:#bcd0f5;font-weight:600}
-.hero p.lead{margin-top:18px;max-width:620px;color:#d7e0f2;font-size:16px}
-.hero .cta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;transition:.15s}
-.btn.primary{background:#fff;color:var(--navy)}
-.btn.primary:hover{transform:translateY(-1px)}
+header.hero{position:relative;overflow:hidden;isolation:isolate;
+  background:radial-gradient(120% 120% at 85% 0%,#233a63 0%,#16264425 40%,transparent 70%),
+             linear-gradient(160deg,#0b1526 0%,#13223f 55%,#1b2f52 100%);
+  color:#fff;padding:88px 0 80px}
+.hero .glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;z-index:-1;pointer-events:none}
+.hero .glow-a{width:420px;height:420px;top:-140px;right:-80px;
+  background:radial-gradient(circle,#3b6fe0 0%,transparent 68%)}
+.hero .glow-b{width:360px;height:360px;bottom:-160px;left:-100px;
+  background:radial-gradient(circle,#5a3be0 0%,transparent 68%);opacity:.35}
+.hero .badge{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+  color:#cdddff;font-size:13px;font-weight:600;padding:6px 13px;border-radius:999px;
+  backdrop-filter:blur(6px);margin-bottom:20px}
+.hero .badge .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;
+  box-shadow:0 0 0 0 rgba(74,222,128,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(74,222,128,.5)}70%{box-shadow:0 0 0 7px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+.hero h1{font-size:clamp(32px,6.2vw,52px);font-weight:800;letter-spacing:-.035em;line-height:1.16}
+.hero h1 .grad{background:linear-gradient(100deg,#8fb6ff 0%,#c4b5ff 55%,#9fe0ff 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+@media(max-width:560px){.hero h1{font-size:30px;letter-spacing:-.03em}.hero h1 br{display:none}}
+.hero .role{margin-top:14px;font-size:clamp(15px,3.2vw,19px);color:#aec5ef;font-weight:600;letter-spacing:-.01em}
+.hero p.lead{margin-top:18px;max-width:640px;color:#d3def3;font-size:16px}
+.hero .domains{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.hero .domains .pill{font-size:13px;font-weight:600;color:#cdddff;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+  padding:5px 13px;border-radius:999px}
+.hero .cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:11px 18px;border-radius:11px;font-size:14px;font-weight:600;transition:.18s ease}
+.btn.primary{background:#fff;color:var(--navy);box-shadow:0 6px 20px rgba(120,160,255,.25)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(120,160,255,.35)}
 .btn.ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.22)}
-.btn.ghost:hover{background:rgba(255,255,255,.16)}
+.btn.ghost:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
 
 /* sections */
 section{padding:54px 0;border-bottom:1px solid var(--line)}
