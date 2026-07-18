@@ -26,25 +26,18 @@ nav .links a:hover{color:var(--accent)}
 header.hero{position:relative;overflow:hidden;isolation:isolate;
   background:radial-gradient(120% 120% at 85% 0%,#233a63 0%,#16264425 40%,transparent 70%),
              linear-gradient(160deg,#0b1526 0%,#13223f 55%,#1b2f52 100%);
-  color:#fff;padding:88px 0 80px}
+  color:#fff;padding:84px 0 80px}
 .hero .glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;z-index:-1;pointer-events:none}
 .hero .glow-a{width:420px;height:420px;top:-140px;right:-80px;
   background:radial-gradient(circle,#3b6fe0 0%,transparent 68%)}
 .hero .glow-b{width:360px;height:360px;bottom:-160px;left:-100px;
   background:radial-gradient(circle,#5a3be0 0%,transparent 68%);opacity:.35}
-.hero .badge{display:inline-flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
-  color:#cdddff;font-size:13px;font-weight:600;padding:6px 13px;border-radius:999px;
-  backdrop-filter:blur(6px);margin-bottom:20px}
-.hero .badge .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;
-  box-shadow:0 0 0 0 rgba(74,222,128,.6);animation:pulse 2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(74,222,128,.5)}70%{box-shadow:0 0 0 7px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
 .hero h1{font-size:clamp(32px,6.2vw,52px);font-weight:800;letter-spacing:-.035em;line-height:1.16}
 .hero h1 .grad{background:linear-gradient(100deg,#8fb6ff 0%,#c4b5ff 55%,#9fe0ff 100%);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
-@media(max-width:560px){.hero h1{font-size:30px;letter-spacing:-.03em}.hero h1 br{display:none}}
+@media(max-width:560px){.hero h1{font-size:34px;letter-spacing:-.03em}.hero h1 br{display:none}}
 .hero .role{margin-top:14px;font-size:clamp(15px,3.2vw,19px);color:#aec5ef;font-weight:600;letter-spacing:-.01em}
-.hero p.lead{margin-top:18px;max-width:640px;color:#d3def3;font-size:16px}
+.hero p.lead{margin-top:0;max-width:720px;color:#e6edf9;font-size:clamp(17px,2.4vw,20px);line-height:1.7;font-weight:500}
 .hero .domains{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
 .hero .domains .pill{font-size:13px;font-weight:600;color:#cdddff;
   background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
@@ -63,6 +56,11 @@ section:last-of-type{border-bottom:0}
 h2{font-size:24px;font-weight:800;letter-spacing:-.02em;margin:6px 0 22px}
 h3{font-size:17px;font-weight:700;letter-spacing:-.01em}
 .muted{color:var(--muted)}
+/* highlighter */
+.hl{background:linear-gradient(180deg,transparent 52%,rgba(37,99,235,.18) 52%);
+  padding:0 2px;font-weight:600;color:var(--ink);border-radius:2px;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hl.strong{background:linear-gradient(180deg,transparent 48%,rgba(37,99,235,.28) 48%);color:var(--accent)}
 
 /* skills */
 .skillgrid{display:grid;gap:14px}
@@ -81,8 +79,9 @@ h3{font-size:17px;font-weight:700;letter-spacing:-.01em}
 .job .pos{color:var(--accent);font-size:14px;font-weight:600;margin-top:2px}
 .job .summary{color:var(--muted);font-size:14px;margin-top:8px}
 .job ul{margin:12px 0 0;padding-left:18px}
-.job li{margin:7px 0;font-size:15px}
+.job li{margin:9px 0;font-size:15px}
 .job li b{font-weight:700}
+.job li .d,.proj li .d{display:block;color:var(--muted);margin-top:3px}
 .job .co a.colink{color:inherit}
 .job .co a.colink:hover{color:var(--accent);text-decoration:underline}
 .job .co .ext{font-size:.72em;color:var(--muted);margin-left:2px;vertical-align:1px}
@@ -90,7 +89,9 @@ h3{font-size:17px;font-weight:700;letter-spacing:-.01em}
 
 /* project cards (index teaser) */
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(min-width:641px){.cards.three{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:640px){.cards{grid-template-columns:1fr}}
+h2.subhead{margin-top:40px}
 .card{display:flex;flex-direction:column;background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:20px;transition:.15s}
 .card:hover{border-color:#c9d6ec;box-shadow:0 6px 22px rgba(20,40,80,.06);transform:translateY(-2px)}
 .card .star{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.03em}
@@ -121,6 +122,7 @@ footer .fl{display:flex;gap:18px;justify-content:center;margin-bottom:14px;flex-
 .proj{padding:38px 0;border-bottom:1px solid var(--line)}
 .proj:last-child{border-bottom:0}
 .proj .star{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.03em}
+.proj .star.side{color:var(--muted)}
 .proj h2{font-size:22px;margin:6px 0 6px}
 .proj .summary{color:var(--muted);font-size:15px;margin-bottom:14px}
 .proj .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
